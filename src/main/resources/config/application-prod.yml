@@ -31,6 +31,18 @@ spring:
       enabled: false
     livereload:
       enabled: false
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        input:
+          destination: jhkafka
+          content-type: application/json
+        output:
+          destination: jhkafka
+          content-type: application/json
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/jhkafka
@@ -119,3 +131,9 @@ jhipster:
 # ===================================================================
 
 # application:
+
+camunda:
+  bpm:
+    admin-user:
+      id: admin
+      password: admin
